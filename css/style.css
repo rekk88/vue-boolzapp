@@ -4,9 +4,17 @@
     box-sizing: border-box;
 }
 body{
-    background: linear-gradient(to bottom ,#009688 0px ,#009688 15vh,white 15vh , white 85vh);
-    height: 100vh;
+    background: linear-gradient(to bottom ,#009688 0px ,#009688 15vh,#dadbd4 15vh , #dadbd4 85vh);
+    height: calc(100vh - 20px); /*100 vh - 20px dal margine di container*/
 }
-.container{
 
+.container{
+    background-color: lightcoral;
+    height: 90%;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
 }
+
+
+
