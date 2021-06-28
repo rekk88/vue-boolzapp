@@ -30,7 +30,7 @@ body{
 }
 
 .container{
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     height: 90%;
     width: 80%;
     margin: auto;
@@ -138,7 +138,6 @@ aside .bottom .contatti .utente > img{
 .msg{
     width: 70%;
     height: 90vh;
-    background-color: lime;
 }
 .msg .top{
     height: 70px;
@@ -164,4 +163,34 @@ aside .bottom .contatti .utente > img{
 }
 .msg .top .top_right i{
     font-size: 1.3rem; 
+}
+
+.msg .msg_center{
+    height: calc(100% - 140px);
+    background-image: url('../img/mine.jpg');
+    overflow-y: scroll;
+}
+
+.msg .msg_bottom{
+    height: 70px;
+    background-color: #f3eeea;
+}
+.msg .msg_bottom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.3rem;
+}
+.msg .msg_bottom input{
+    height: 65%;
+    width: 80%;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border:grey;
+}
+
+
+.test{
+    background-color: yellow;
+    height: 10000px;
 }
