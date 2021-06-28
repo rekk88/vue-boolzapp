@@ -6,11 +6,25 @@
 .fas{
     color: #b1b1b1;
 }
+.utente_img{
+    height: 100%;
+    vertical-align: top;
+    border-radius: 100%;
+}
+
+.p_tb_10{
+    padding: 10px 0 !important;
+}
+.m_lr_5{
+    margin: 0px 5px !important;
+}
+
 
 /* body */
 body{
     background: linear-gradient(to bottom ,#009688 0px ,#009688 15vh,#dadbd4 15vh , #dadbd4 85vh);
     height: calc(100vh - 20px); /*100 vh - 20px dal margine di container*/
+    overflow-x: hidden;
     /* font-family: ; */
     font-family: 'Heebo', sans-serif;
 }
@@ -31,11 +45,12 @@ aside{
     min-width: 400px;
     height: 90vh;
     background-color: lightskyblue;
+    /* border-right: 2px solid #b4b4b0; */
 }
 aside .top{
     height: 70px;
     background-color: #dadbd4;
-    font-size: 1.3rem;
+    font-size: 1.3rem; 
     padding: 10px 0;
 
     display: flex;
@@ -117,9 +132,6 @@ aside .bottom .contatti .utente{
     margin-bottom: 2px;
 }
 aside .bottom .contatti .utente > img{
-    height: 100%;
-    vertical-align: top;
-    border-radius: 100%;
     margin-right: 10px;
 }
 /* sezione dx messaggi */
@@ -128,4 +140,28 @@ aside .bottom .contatti .utente > img{
     height: 90vh;
     background-color: lime;
 }
+.msg .top{
+    height: 70px;
+    padding: 0px 10px;
+    background-color: #dadbd4;
 
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.msg .top .utente{
+    height: 100%;
+}
+.msg .top .utente > div{
+    display: inline-block;
+}
+.msg .top .utente > div span{
+    display: block;
+}
+.msg .top .utente > div span:nth-last-of-type(1){
+    color: grey;
+}
+.msg .top .top_right i{
+    font-size: 1.3rem; 
+}
