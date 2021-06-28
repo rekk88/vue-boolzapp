@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
 </head>
 <body>
     <div class="container" id="app">
@@ -44,24 +46,24 @@
             <div class="bottom">
                 <div class="search_bar">
                     <div>
-                        <label for="search"><i class="fas fa-search"></i></label>
+                        <label for="search"><i class="fas fa-search" @click="visualizza"></i></label>
                         <input type="text" id="search" placeholder="Cerca tra i contatti">
                     </div>
                     
                 </div>
                 <div class="contatti">
-                    <div class="utente">
+                    <div class="utente" v-for="(item,index) in contacts">
+                        <img :src="'img/' + 'avatar' + item.avatar + '.jpg'" class="utente_img" @click="visualizza_msg(item)" alt="avatar">
+                        <span>{{item.name}}</span>
+                    </div>
+                    <!-- <div class="utente">
                         <img src="img/avatar_1.jpg" class="utente_img" alt="avatar">
                         <span>Nome Utente</span>
                     </div>
                     <div class="utente">
                         <img src="img/avatar_1.jpg" class="utente_img" alt="avatar">
                         <span>Nome Utente</span>
-                    </div>
-                    <div class="utente">
-                        <img src="img/avatar_1.jpg" class="utente_img" alt="avatar">
-                        <span>Nome Utente</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- fine sezione bottom -->
@@ -83,7 +85,22 @@
                     <i class="fas fa-ellipsis-v m_lr_5"></i>
                 </div>
             </div>
-            <div class="msg_center">
+            <div class="msg_center" id="messaggi">
+                <!-- <div class="clearfix"> 
+                    <div class="msg_sent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nesciunt.</div>
+                </div>
+                <div class="clearfix"> 
+                    <div class="msg_received">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nesciunt.</div>
+                </div> -->
+
+
+                <!-- codice per backtick -->
+                <div>
+                    <div class="message msg_sent clearfix">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nesciunt.</div>
+                </div>
+                <div>
+                    <div class="message msg_received clearfix">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nesciunt.</div>
+                </div>
             </div>
             <div class="msg_bottom">
                 <i class="far fa-smile"></i>
@@ -92,5 +109,6 @@
             </div>
         </div>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>

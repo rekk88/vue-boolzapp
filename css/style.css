@@ -18,7 +18,25 @@
 .m_lr_5{
     margin: 0px 5px !important;
 }
-
+.clearfix{
+    display: table;
+    content: "";
+    clear: both;
+}
+.message{
+    width: 50%;
+    border-radius: 10px;
+}
+.msg_sent{ /*classi per js*/
+    background-color: white;
+    float: left;
+   
+}
+.msg_received{ /*classi per js*/
+    background-color: green;
+    float: right;
+    
+}
 
 /* body */
 body{
@@ -169,6 +187,10 @@ aside .bottom .contatti .utente > img{
     height: calc(100% - 140px);
     background-image: url('../img/mine.jpg');
     overflow-y: scroll;
+    padding: 5px 10px;
+    display: flex;  
+    flex-flow: column;
+    justify-content: end;
 }
 
 .msg .msg_bottom{
