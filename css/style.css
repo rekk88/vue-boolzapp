@@ -110,7 +110,18 @@ aside .bottom .contatti{
     height: calc(90vh - 190px);
     overflow-y: scroll;
 }
-
+aside .bottom .contatti .utente{
+    height: 70px;
+    background-color: white;
+    padding: 10px 0px;
+    margin-bottom: 2px;
+}
+aside .bottom .contatti .utente > img{
+    height: 100%;
+    vertical-align: top;
+    border-radius: 100%;
+    margin-right: 10px;
+}
 /* sezione dx messaggi */
 .msg{
     width: 70%;
