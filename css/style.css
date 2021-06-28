@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+.fas{
+    color: #b1b1b1;
+}
+
+/* body */
 body{
     background: linear-gradient(to bottom ,#009688 0px ,#009688 15vh,#dadbd4 15vh , #dadbd4 85vh);
     height: calc(100vh - 20px); /*100 vh - 20px dal margine di container*/
@@ -23,6 +28,8 @@ body{
 /* sidebar contatti sx */
 aside{
     width: 30%;
+    min-width: 400px;
+    height: 90vh;
     background-color: lightskyblue;
 }
 aside .top{
@@ -49,13 +56,65 @@ aside .top .utente img{
     padding: 10px 0;
 }
 aside .top .fas{
-    color: #b1b1b1;
     margin: 0px 5px;
+}
+
+aside .middle{
+    height: 80px;
+    padding: 10px;
+    background-color: #8edafc;
+}
+aside .middle .fas.fa-bell-slash{
+    font-size: 1.4rem;
+    color: #8edafc;
+    background-color: #f2fbff;
+    border-radius: 100%;
+    padding: 12px 10px;
+    margin: 10px 0px;
+    vertical-align: top;
+}
+aside .middle .middle_text{
+    display: inline-block;
+    margin: 10px 0px;
+}
+.middle_text a {
+    color: grey;
+}
+
+aside .bottom{
+    background-color: #fafafa;
+    height: calc(90vh - 150px);
+    /* height: 100%;  DA SISTEMARE , prende 100% dei 100vh del body e non il 90% del suo contenitore*/
+}
+
+aside .search_bar{
+    padding: 5px;
+    font-size: 1.2rem;
+    height: 40px;
+    
+}
+aside .search_bar .fa-search{
+    vertical-align: middle;
+    width: 8%;
+}
+
+aside .search_bar  input{
+    height: 1.2rem;
+    border: #fafafa;
+    width: 90%;
+    /* display: inline-block; */
+}
+
+aside .bottom .contatti{
+    /* height: 100%; */
+    height: calc(90vh - 190px);
+    overflow-y: scroll;
 }
 
 /* sezione dx messaggi */
 .msg{
     width: 70%;
+    height: 90vh;
     background-color: lime;
 }
 
