@@ -15,8 +15,15 @@
 .p_tb_10{
     padding: 10px 0 !important;
 }
+.p_x_5{
+    padding:0px 5px !important;
+}
+
 .m_lr_5{
     margin: 0px 5px !important;
+}
+.m_b_5{
+    margin-bottom: 5px !important;
 }
 .clearfix{
     display: table;
@@ -33,14 +40,18 @@
    
 }
 .msg_received{ /*classi per js*/
-    background-color: green;
+    background-color: #e2ffc9;
     float: right;
     
 }
+
 .offset_y{
     content: "";
     /* height:; */
 }
+
+
+
 /* body */
 body{
     background: linear-gradient(to bottom ,#009688 0px ,#009688 15vh,#dadbd4 15vh , #dadbd4 85vh);
@@ -195,7 +206,10 @@ aside .bottom .contatti .utente > img{
     flex-flow: column;
     justify-content: end;
 }
-
+.date_format{
+    font-size: 0.7rem;
+    color: grey;
+}
 .msg .msg_bottom{
     height: 70px;
     background-color: #f3eeea;

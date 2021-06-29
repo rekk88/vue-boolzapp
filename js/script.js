@@ -102,31 +102,27 @@ const contacts = [
 var app = new Vue({
     el : "#app",
     data: {
-        contacts,    
-        messaggi : contacts[0].messages,
-        nomeContatto : contacts[0].name,
-        nome : contacts[0].name, //parte inizializzato dal primo contatto in lista
-        ultimoAccesso : contacts[0].messages[0].date
+        contacts, // == contacts : contacts    
+        // messaggi : contacts[0].messages,
+        // nome : contacts[0].name, //parte inizializzato dal primo contatto in lista
+        // ultimoAccesso : contacts[0].messages[0].date
+        contact : contacts[0],
     },
             
    
     methods: {
-        visualizza(){
-            console.log("ciao");
-            console.log(contacts[0].name);
-            console.log(contacts[0].messages[1]);
-        },
-       
+      
         visualizza_msg(index){
-            this.messaggi = contacts[index].messages,
+            //lavorando sull'array contacts
+            // this.messaggi = contacts[index].messages,
+            // this.nome = contacts[index].name;
+            // let lastItem = contacts[index].messages.length - 1;
+            // this.ultimoAccesso = contacts[index].messages[lastItem].date;
             
-            this.nome = contacts[index].name;
-            console.log(this.ultimoAccesso);
-            let lastItem = contacts[index].messages.length - 1;
-            // console.log(l);
-            // console.log(contacts[index].messages[messages]);
-            this.ultimoAccesso = contacts[index].messages[lastItem].date;
-            console.log(this.ultimoAccesso);
+            //lavorando sul singolo contatto ad ogni click
+            this.contact = this.contacts[index];
+
+
         }
 
     },

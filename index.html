@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script><!--link vue cdn-->
 
 </head>
 <body>
@@ -46,14 +46,14 @@
             <div class="bottom">
                 <div class="search_bar">
                     <div>
-                        <label for="search"><i class="fas fa-search" @click="visualizza"></i></label>
+                        <label for="search"><i class="fas fa-search"></i></label>
                         <input type="text" id="search" placeholder="Cerca tra i contatti">
                     </div>
                     
                 </div>
                 <div class="contatti">
-                    <div class="utente" v-for="(item,index) in contacts">
-                        <img :src="'img/' + 'avatar' + item.avatar + '.jpg'" class="utente_img" @click="visualizza_msg(index)" alt="avatar">
+                    <div class="utente" v-for="(item,index) in contacts" @click="visualizza_msg(index)">
+                        <img :src="'img/' + 'avatar' + item.avatar + '.jpg'" class="utente_img"  alt="avatar">
                         <span>{{item.name}} {{index}}</span>
                     </div>
                     <!-- <div class="utente">
@@ -74,8 +74,8 @@
                 <div class="utente p_tb_10">
                     <img src="img/avatar_1.jpg" class="utente_img" alt="avatar">
                     <div>
-                        <span>Nome Utente {{nome}}</span>
-                        <span>Ultimo accesso :{{ultimoAccesso}}</span>
+                        <span>Nome Utente {{contact.name}}</span>
+                        <span>Ultimo accesso : {{contact.messages[contact.messages.length - 1].date}}</span>
                     </div>
                     
                 </div>
@@ -110,9 +110,10 @@
                     <div>{{item}}</div>
                 </div>
                  -->
-                <div id="messaggio" v-for="messaggio in messaggi" >
-                    <div :class="'message msg_' + messaggio.status + ' clearfix'">
+                <div id="messaggio" v-for="messaggio in contact.messages" >
+                    <div :class="'message msg_' + messaggio.status + ' clearfix p_x_5 m_b_5'">
                         {{messaggio.text}}
+                        <div class="date_format">{{messaggio.date}}</div>
                     </div>
                 </div>
             </div>
