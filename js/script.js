@@ -107,6 +107,8 @@ var app = new Vue({
         // nome : contacts[0].name, //parte inizializzato dal primo contatto in lista
         // ultimoAccesso : contacts[0].messages[0].date
         contact : contacts[0],
+        colore : false,
+        indice : 0,
     },
             
    
@@ -122,6 +124,12 @@ var app = new Vue({
             //lavorando sul singolo contatto ad ogni click
             this.contact = this.contacts[index];
 
+
+        },
+        addColor(index){
+            console.log(this.colore);
+            this.colore = !this.colore;
+            this.indice = index;
 
         }
 

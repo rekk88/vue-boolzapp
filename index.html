@@ -52,9 +52,9 @@
                     
                 </div>
                 <div class="contatti">
-                    <div class="utente" v-for="(item,index) in contacts" @click="visualizza_msg(index)">
+                    <div :class="{grey : colore && index==indice}" class="utente" v-for="(item,index) in contacts" @click="visualizza_msg(index); addColor(index)">
                         <img :src="'img/' + 'avatar' + item.avatar + '.jpg'" class="utente_img"  alt="avatar">
-                        <span>{{item.name}} {{index}}</span>
+                        <span >{{item.name}} {{index}}</span>
                     </div>
                     <!-- <div class="utente">
                         <img src="img/avatar_1.jpg" class="utente_img" alt="avatar">
