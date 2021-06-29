@@ -94,13 +94,23 @@
                 </div> -->
 
 
-                <!-- codice per backtick -->
+                <!-- codice per backtick
+                <div class="offset_y"></div>
                 <div>
                     <div class="message msg_sent clearfix">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nesciunt.</div>
                 </div>
                 <div>
                     <div class="message msg_received clearfix">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nesciunt.</div>
+                </div> -->
+                <!--
+                <div v-if="(element.status === 'sent')">
+                    <div class="message msg_sent clearfix">{{item[index]}}</div>
                 </div>
+                <div v-if-else="element.status === 'received'">
+                    <div class="message msg_received clearfix">{{item}}</div>
+                </div>
+                 -->
+                <div  id="messaggio" v-for="(element,index) in cazzabubboli">{{element}}</div>
             </div>
             <div class="msg_bottom">
                 <i class="far fa-smile"></i>

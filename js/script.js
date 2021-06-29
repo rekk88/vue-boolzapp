@@ -97,6 +97,9 @@ var app = new Vue({
                 messages : []
             },
         ],
+        index : 0,
+        cazzabubboli : [],
+        // contatto,
                 
     },
             
@@ -114,29 +117,47 @@ var app = new Vue({
             console.log(this.contacts[0].name);
             console.log(this.contacts[0].messages[1].date);
         },
-        visualizza_msg(item){
-            // console.log(item.name);
-            let tag = document.getElementById("messaggi");
-            item.messages.forEach((element,index) => {
+        // visualizza_msg(item){
+        //     console.log(item.messages);
+        //     let tag = document.getElementById("messaggi");
+        //     tag.innerHTML = "";
+        //     // let state = item.messages;
+        //     // console.log(state);
+        //     item.messages.forEach((element,index) => {
                 
-                console.log(element.text);
-                console.log(index);
+        //         console.log(element.text);
+        //         console.log(index);
 
-                //bug in v-if v-else
-                tag.innerHTML +=`
-                <div v-if="element.status =='sent'">
-                    <div class="message msg_sent clearfix">${element.text}</div>
-                </div>
-                <div v-else">
-                    <div class="message msg_received clearfix">${element.text}</div>
-                </div>
+        //         //bug in v-if v-else
+        //         console.log(element.status);
+        //         let msg;
+        //         if (element.status == 'received') {
+        //             msg = 'msg_received'
+        //         }
+        //         else{
+        //             msg = 'msg_sent'
+        //         }
+        //         tag.innerHTML +=`
+        //         <div>
+        //             <div class="message clearfix ${msg}">${element.text}</div>
+        //         </div>
+               
+        //         `;
 
-                `
-            });
+        //     //     <div>
+        //     //     <div class="message msg_received clearfix">${element.text}</div>
+        //     // </div>
+        //     });
+
             
 
+        // }
+        visualizza_msg(item){
+            cazzabubboli = item.messages;
+            // console.log(item.messages);
+            console.log(cazzabubboli);
+            // document.getElementById("messaggio").innerHTML = messaggi;
         }
-
 
     },
 })

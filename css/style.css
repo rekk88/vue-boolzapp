@@ -37,7 +37,10 @@
     float: right;
     
 }
-
+.offset_y{
+    content: "";
+    /* height:; */
+}
 /* body */
 body{
     background: linear-gradient(to bottom ,#009688 0px ,#009688 15vh,#dadbd4 15vh , #dadbd4 85vh);
