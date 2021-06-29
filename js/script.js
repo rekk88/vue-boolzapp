@@ -99,7 +99,8 @@ var app = new Vue({
     data: {
         contacts,    
         messaggi : contacts[0].messages,
-
+        nomeContatto : contacts[0].name,
+        nome : contacts[0].name, //parte inizializzato dal primo contatto in lista
     },
             
    
@@ -113,11 +114,8 @@ var app = new Vue({
         visualizza_msg(index){
             this.messaggi = contacts[index].messages,
             console.log(this.messaggi);
-            // console.log(this.counter);
-            // console.log(this.contacts[index].messages);
-            // this.messaggi = this.contacts[index].messages;
-            // console.log(messaggi);
-            
+            console.log(this.nome);
+            this.nome = contacts[index].name;
         }
 
     },
