@@ -53,8 +53,8 @@
                 </div>
                 <div class="contatti">
                     <div class="utente" v-for="(item,index) in contacts">
-                        <img :src="'img/' + 'avatar' + item.avatar + '.jpg'" class="utente_img" @click="visualizza_msg(item)" alt="avatar">
-                        <span>{{item.name}}</span>
+                        <img :src="'img/' + 'avatar' + item.avatar + '.jpg'" class="utente_img" @click="visualizza_msg(index)" alt="avatar">
+                        <span>{{item.name}} {{index}}</span>
                     </div>
                     <!-- <div class="utente">
                         <img src="img/avatar_1.jpg" class="utente_img" alt="avatar">
@@ -110,7 +110,7 @@
                     <div class="message msg_received clearfix">{{item}}</div>
                 </div>
                  -->
-                <div  id="messaggio" v-for="(element,index) in cazzabubboli">{{element}}</div>
+                <div id="messaggio" v-for="messaggio in messaggi">{{messaggio.text}}</div>
             </div>
             <div class="msg_bottom">
                 <i class="far fa-smile"></i>

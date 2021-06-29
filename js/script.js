@@ -47,58 +47,59 @@ var app = new Vue({
                     },
                 ]
             },
-            {
-                name: 'Ghandalf',
-                avatar: '_3',
-                visible: true,
-                messages : []
-            },
+            // {
+            //     name: 'Ghandalf',
+            //     avatar: '_3',
+            //     visible: true,
+            //     messages : []
+            // },
 
-            {
-                name: 'Bilbo',
-                avatar: '_4',
-                visible: true,
-                messages : []
-            },
-            {
-                name: 'Radagast',
-                avatar: '_5',
-                visible: true,
-                messages : []
-            },
-            {
-                name: 'Franco',
-                avatar: '_5',
-                visible: true,
-                messages : []
-            },
-            {
-                name: 'Gianni',
-                avatar: '_5',
-                visible: true,
-                messages : []
-            },
-            {
-                name: 'Arancia',
-                avatar: '_5',
-                visible: true,
-                messages : []
-            },
-            {
-                name: 'Pesca',
-                avatar: '_5',
-                visible: true,
-                messages : []
-            },
-            {
-                name: 'Non so cosa scrivere',
-                avatar: '_5',
-                visible: true,
-                messages : []
-            },
+            // {
+            //     name: 'Bilbo',
+            //     avatar: '_4',
+            //     visible: true,
+            //     messages : []
+            // },
+            // {
+            //     name: 'Radagast',
+            //     avatar: '_5',
+            //     visible: true,
+            //     messages : []
+            // },
+            // {
+            //     name: 'Franco',
+            //     avatar: '_5',
+            //     visible: true,
+            //     messages : []
+            // },
+            // {
+            //     name: 'Gianni',
+            //     avatar: '_5',
+            //     visible: true,
+            //     messages : []
+            // },
+            // {
+            //     name: 'Arancia',
+            //     avatar: '_5',
+            //     visible: true,
+            //     messages : []
+            // },
+            // {
+            //     name: 'Pesca',
+            //     avatar: '_5',
+            //     visible: true,
+            //     messages : []
+            // },
+            // {
+            //     name: 'Non so cosa scrivere',
+            //     avatar: '_5',
+            //     visible: true,
+            //     messages : []
+            // },
         ],
-        index : 0,
+        counter : 0,
         cazzabubboli : [],
+        messaggi: contacts[0],
         // contatto,
                 
     },
@@ -152,10 +153,15 @@ var app = new Vue({
             
 
         // }
-        visualizza_msg(item){
-            cazzabubboli = item.messages;
+        visualizza_msg(index){
+            this.counter = index;
+            // console.log(index);
+            // console.log(item);
+            // cazzabubboli = item.messages[counter];
+            console.log(this.counter);
+            console.log(this.contacts[index].messages);
             // console.log(item.messages);
-            console.log(cazzabubboli);
+            // console.log(cazzabubboli);
             // document.getElementById("messaggio").innerHTML = messaggi;
         }
 
