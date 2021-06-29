@@ -231,7 +231,6 @@ aside .bottom .contatti .utente > img{
 }
 
 
-.test{
-    background-color: yellow;
-    height: 10000px;
+.utente:active{
+    background-color: grey;
 }

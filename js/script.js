@@ -3,6 +3,7 @@ const contacts = [
         name: 'Michele',
         avatar: '_1',
         visible: true,
+        colore: false,
         messages : [
             {
                 date: '10/01/2020 15:30:55',
@@ -25,6 +26,7 @@ const contacts = [
         name: 'Fabio',
         avatar: '_2',
         visible: true,
+        colore: false,
         messages : [
             {
                 date: '20/03/2020 16:30:00',
@@ -107,8 +109,8 @@ var app = new Vue({
         // nome : contacts[0].name, //parte inizializzato dal primo contatto in lista
         // ultimoAccesso : contacts[0].messages[0].date
         contact : contacts[0],
-        colore : false,
         indice : 0,
+        k:false,
     },
             
    
@@ -126,11 +128,19 @@ var app = new Vue({
 
 
         },
-        addColor(index){
-            console.log(this.colore);
-            this.colore = !this.colore;
-            this.indice = index;
-
+        addColor(item,n){
+            
+            contacts.forEach((element,index) => {
+                if(index != n){
+                    element.colore = false;
+                }
+                else{
+                    contacts[n].colore = true;
+                }
+                console.log(element.name , element.colore);
+            });
+            // console.log(contacts[n].colore);
+            // console.log(contacts[n].name , contacts[n].colore);
         }
 
     },
