@@ -107,10 +107,14 @@
                     <div class="message msg_sent clearfix">{{item[index]}}</div>
                 </div>
                 <div v-if-else="element.status === 'received'">
-                    <div class="message msg_received clearfix">{{item}}</div>
+                    <div>{{item}}</div>
                 </div>
                  -->
-                <div id="messaggio" v-for="messaggio in messaggi">{{messaggio.text}}</div>
+                <div id="messaggio" v-for="messaggio in messaggi" >
+                    <div :class="'message msg_' + messaggio.status + ' clearfix'">
+                        {{messaggio.text}}
+                    </div>
+                </div>
             </div>
             <div class="msg_bottom">
                 <i class="far fa-smile"></i>
