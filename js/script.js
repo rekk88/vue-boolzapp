@@ -41,6 +41,11 @@ const contacts = [
                 text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                 status: 'sent'
             },
+            {
+                date: '20/03/2020 16:49:00',
+                text: 'Questo è il mio ultio messaggio',
+                status: 'sent'
+            },
         ]
     },
     // {
@@ -101,6 +106,7 @@ var app = new Vue({
         messaggi : contacts[0].messages,
         nomeContatto : contacts[0].name,
         nome : contacts[0].name, //parte inizializzato dal primo contatto in lista
+        ultimoAccesso : contacts[0].messages[0].date
     },
             
    
@@ -113,9 +119,14 @@ var app = new Vue({
        
         visualizza_msg(index){
             this.messaggi = contacts[index].messages,
-            console.log(this.messaggi);
-            console.log(this.nome);
+            
             this.nome = contacts[index].name;
+            console.log(this.ultimoAccesso);
+            let lastItem = contacts[index].messages.length - 1;
+            // console.log(l);
+            // console.log(contacts[index].messages[messages]);
+            this.ultimoAccesso = contacts[index].messages[lastItem].date;
+            console.log(this.ultimoAccesso);
         }
 
     },
