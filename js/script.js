@@ -125,7 +125,7 @@ var app = new Vue({
             
             //lavorando sul singolo contatto ad ogni click
             this.contact = this.contacts[index];
-
+            this.indice = index;
 
         },
         addColor(item,n){

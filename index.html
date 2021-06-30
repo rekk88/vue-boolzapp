@@ -52,8 +52,8 @@
                     
                 </div>
                 <div class="contatti">
-                    <div :class="{grey : contacts[index].colore} + ''" class="utente" v-for="(item,index) in contacts" @click="visualizza_msg(index); addColor(item,index)">
-                        <img :src="'img/' + 'avatar' + item.avatar + '.jpg'" class="utente_img"  alt="avatar">
+                    <div :class="{grey : contact.colore && index == indice}" class="utente" v-for="(item,index) in contacts" @click="visualizza_msg(index); addColor(item,index)">
+                        <img :src="'img/' + 'avatar' + item.avatar + '.jpg'" class="utente_img"  :alt="contact.name">
                         <span>{{item.name}} {{index}}</span>
                     </div>
                     <!-- <div class="utente">
@@ -72,7 +72,7 @@
         <div class="msg">
             <div class="top">
                 <div class="utente p_tb_10">
-                    <img :src="'img/avatar' + contact.avatar +'.jpg'" class="utente_img" alt="avatar">
+                    <img :src="'img/avatar' + contact.avatar +'.jpg'" class="utente_img" :alt="contact.name">
                     <div>
                         <span>{{contact.name}}</span>
                         <span>Ultimo accesso : {{contact.messages[contact.messages.length - 1].date}}</span>
