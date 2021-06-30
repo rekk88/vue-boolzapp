@@ -111,8 +111,22 @@ var app = new Vue({
         contact : contacts[0],
         indice : 0,
         k:false,
+        messaggio:"",
+        ricerca:"",
+        arrayTest: [],
     },
-            
+    computed:{
+        filteredContacts(){
+            // this.arrayTest = contacts.filter(element => {
+            //    return element.name.includes(this.ricerca);
+            // });
+            console.log(this.ricerca);
+            return contacts.filter(element => {
+                return element.name.includes(this.ricerca);
+            });
+
+        }
+    },
    
     methods: {
       
@@ -141,7 +155,34 @@ var app = new Vue({
             });
             // console.log(contacts[n].colore);
             // console.log(contacts[n].name , contacts[n].colore);
+        },
+     
+        pushMsg(){
+            
+            this.contact.messages.push(
+                {
+                    date: '20/03/2020 17:03:00',
+                    text: this.messaggio,
+                    status: 'sent'
+                }
+            );
+            //svuota l'input text
+            this.messaggio="";
+            setTimeout(function(){
+                app.contact.messages.push(
+                    {
+                        date: '20/03/2020 17:05:00',
+                        text: "ok",
+                        status: 'received'
+                    }
+                );
+            },1000);
+            console.log("timeout");
+        },
+        test(){
+            console.log(this.arrayTest);
         }
+        
 
     },
 })
