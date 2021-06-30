@@ -85,21 +85,18 @@ var app = new Vue({
         // ultimoAccesso : contacts[0].messages[0].date
         contact : contacts[0],
         indice : 0,
-        k:false,
-        messaggio:"",
-        ricerca:"",
-        arrayTest: [],
+        messaggio:"", //v-model per l'inserimento di nuovi messaggi
+        ricerca:"", //v-model per la barra di ricerca        
+        n:"", //creo un nuovo oggetto della libreria dayjs
     },
     computed:{
         filteredContacts(){
-            // this.arrayTest = contacts.filter(element => {
-            //    return element.name.includes(this.ricerca);
-            // });
             console.log(this.ricerca);
+            //restituisce un array contenente gli elementi di contacts che 
+            //hanno in .name una parte o tutta la stringa contenuta in
             return contacts.filter(element => {
                 return element.name.includes(this.ricerca);
             });
-
         }
     },
    
@@ -115,6 +112,8 @@ var app = new Vue({
             //lavorando sul singolo contatto ad ogni click
             this.contact = this.contacts[index];
             this.indice = index;
+            
+            // console.log(this.n.format().toDate());
 
         },
         addColor(item,n){
@@ -128,37 +127,38 @@ var app = new Vue({
                 }
                 console.log(element.name , element.colore);
             });
-            // console.log(contacts[n].colore);
-            // console.log(contacts[n].name , contacts[n].colore);
         },
-     
+        tempo(){
+            this.n =  dayjs();
+            return this.n.format("YYYY-MM-DD") + " " +this.n.format("HH:mm:ss");
+        },
         pushMsg(){
-            
+
+            //prendo data e ora di invio del messaggio
+           
+            // console.log(this.n.format("YYYY-MM-DD"),this.n.format("HH:mm:ss"));
+            //push del messaggio nell'array
             this.contact.messages.push(
                 {
-                    date: '20/03/2020 17:03:00',
+                    date: this.tempo(), //prendo la data e l'ora corrente
                     text: this.messaggio,
                     status: 'sent'
                 }
             );
             //svuota l'input text
             this.messaggio="";
+            //risposta di default a tutti i messaggi
+            // let time = this.tempo();
             setTimeout(function(){
                 app.contact.messages.push(
                     {
-                        date: '20/03/2020 17:05:00',
+                        date: app.tempo(), //prendo la data e l'ora corrente
                         text: "ok",
                         status: 'received'
                     }
                 );
             },1000);
-            console.log("timeout");
         },
-        test(){
-            console.log(this.arrayTest);
-        }
-        
-
     },
 })
 
