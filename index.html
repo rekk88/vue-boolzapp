@@ -72,9 +72,9 @@
         <div class="msg">
             <div class="top">
                 <div class="utente p_tb_10">
-                    <img src="img/avatar_1.jpg" class="utente_img" alt="avatar">
+                    <img :src="'img/avatar' + contact.avatar +'.jpg'" class="utente_img" alt="avatar">
                     <div>
-                        <span>Nome Utente {{contact.name}}</span>
+                        <span>{{contact.name}}</span>
                         <span>Ultimo accesso : {{contact.messages[contact.messages.length - 1].date}}</span>
                     </div>
                     
