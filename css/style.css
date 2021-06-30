@@ -168,6 +168,11 @@ aside .bottom .contatti .utente{
 aside .bottom .contatti .utente > img{
     margin-right: 10px;
 }
+
+aside .bottom .contatti .utente > span{
+    text-transform: capitalize;
+}
+
 /* sezione dx messaggi */
 .msg{
     width: 70%;

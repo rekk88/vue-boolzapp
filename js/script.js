@@ -1,6 +1,6 @@
 const contacts = [
     {
-        name: 'Michele',
+        name: 'michele',
         avatar: '_1',
         visible: true,
         colore: false,
@@ -23,7 +23,7 @@ const contacts = [
         ],
     },
     {
-        name: 'Fabio',
+        name: 'fabio',
         avatar: '_2',
         visible: true,
         colore: false,
@@ -50,12 +50,23 @@ const contacts = [
             },
         ]
     },
-    // {
-    //     name: 'Ghandalf',
-    //     avatar: '_3',
-    //     visible: true,
-    //     messages : []
-    // },
+    {
+        name: 'ghandalf',
+        avatar: '_3',
+        visible: true,
+        messages : [
+            {
+                date: '20/03/2020 16:49:00',
+                text: 'TU NON PUOI PASSAREE!!!!',
+                status: 'sent'
+            },
+            {
+                date: '20/03/2020 16:49:00',
+                text: 'e invece si hahaha',
+                status: 'received'
+            },
+        ]
+    },
 
     // {
     //     name: 'Bilbo',

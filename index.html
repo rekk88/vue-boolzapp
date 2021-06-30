@@ -54,7 +54,7 @@
                 <div class="contatti">
                     <div :class="{grey : contact.colore && index == indice}" class="utente" v-for="(item,index) in filteredContacts" @click="visualizza_msg(index); addColor(item,index)">
                         <img :src="'img/' + 'avatar' + item.avatar + '.jpg'" class="utente_img"  :alt="contact.name">
-                        <span>{{item.name}} {{index}}</span>
+                        <span>{{item.name}}</span>
                     </div>
                     <!-- <div class="utente">
                         <img src="img/avatar_1.jpg" class="utente_img" alt="avatar">
