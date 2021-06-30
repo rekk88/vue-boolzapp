@@ -5,21 +5,9 @@ const contacts = [
         visible: true,
         colore: false,
         messages : [
-            {
-                date: '10/01/2020 15:30:55',
-                text: 'Hai portato a spasso il cane?',
-                status: 'sent'
-            },
-            {
-                date: '10/01/2020 15:50:00',
-                text: 'Ricordati di dargli da mangiare',
-                status: 'sent'
-            },
-            {
-                date: '10/01/2020 16:15:22',
-                text: 'Tutto fatto!',
-                status: 'received'
-            },
+            {date: '10/01/2020 15:30:55',text: 'Hai portato a spasso il cane?',status: 'sent'},
+            {date: '10/01/2020 15:50:00',text: 'Ricordati di dargli da mangiare',status: 'sent'},
+            {date: '10/01/2020 16:15:22',text: 'Tutto fatto!',status: 'received'},
         ],
     },
     {
@@ -28,43 +16,19 @@ const contacts = [
         visible: true,
         colore: false,
         messages : [
-            {
-                date: '20/03/2020 16:30:00',
-                text: 'Ciao come stai?',
-                status: 'sent'
-            },
-            {
-                date: '20/03/2020 16:30:55',
-                text: 'Bene grazie! Stasera ci vediamo?',
-                status: 'received'
-            },
-            {
-                date: '20/03/2020 16:35:00',
-                text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                status: 'sent'
-            },
-            {
-                date: '20/03/2020 16:49:00',
-                text: 'Questo è il mio ultio messaggio',
-                status: 'sent'
-            },
+            {date: '20/03/2020 16:30:00',text: 'Ciao come stai?',status: 'sent'},
+            {date: '20/03/2020 16:30:55',text: 'Bene grazie! Stasera ci vediamo?',status: 'received'},
+            {date: '20/03/2020 16:35:00',text: 'Mi piacerebbe ma devo andare a fare la spesa.',status: 'sent'},
+            {date: '20/03/2020 16:49:00',text: 'Questo è il mio ultio messaggio',status: 'sent'},
         ]
     },
     {
-        name: 'ghandalf',
+        name: 'gandalf',
         avatar: '_3',
         visible: true,
         messages : [
-            {
-                date: '20/03/2020 16:49:00',
-                text: 'TU NON PUOI PASSAREE!!!!',
-                status: 'sent'
-            },
-            {
-                date: '20/03/2020 16:49:00',
-                text: 'e invece si hahaha',
-                status: 'received'
-            },
+            {date: '20/03/2020 16:49:00',text: 'TU NON PUOI PASSAREE!!!!',status: 'sent'},
+            {date: '20/03/2020 16:49:00',text: 'e invece si hahaha',status: 'received'},
         ]
     },
 
