@@ -158,10 +158,10 @@ var app = new Vue({
                         }
 
                     );
+                    app.updateScroll();
                     console.log("timeout");
                 },1000);
             }
-            this.updateScroll();
         },
         updateScroll(){
             console.log("ciao");
