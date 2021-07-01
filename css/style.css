@@ -32,6 +32,7 @@
 }
 .message{
     width: 50%;
+    max-width: 400px;
     border-radius: 10px;
 }
 .msg_sent{ /*classi per js*/
@@ -234,8 +235,30 @@ aside .bottom .contatti .utente > span{
     border-radius: 10px;
     border:grey;
 }
-
+.msg #messaggi #messaggio .fas.fa-chevron-down{
+    float: right;
+}
 
 .utente:active{
     background-color: grey;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown_content{
+    display: none;
+    position: absolute;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+}
+.msg #messaggi #messaggio .fas.fa-chevron-down:hover .dropdown_content {
+    display: block;
+}
+.dropdown:hover .dropdown_content{
+    display: block;
+    min-width: 100px;
+
 }
