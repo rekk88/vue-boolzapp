@@ -91,7 +91,7 @@ var app = new Vue({
     },
     computed:{
         filteredContacts(){
-            console.log(this.ricerca);
+            // console.log(this.ricerca);
             //restituisce un array contenente gli elementi di contacts che 
             //hanno in .name una parte o tutta la stringa contenuta in
             return contacts.filter(element => {
@@ -99,7 +99,7 @@ var app = new Vue({
             });
         }
     },
-   
+
     methods: {
       
         visualizza_msg(index){
@@ -138,27 +138,43 @@ var app = new Vue({
            
             // console.log(this.n.format("YYYY-MM-DD"),this.n.format("HH:mm:ss"));
             //push del messaggio nell'array
-            this.contact.messages.push(
-                {
-                    date: this.tempo(), //prendo la data e l'ora corrente
-                    text: this.messaggio,
-                    status: 'sent'
-                }
-            );
-            //svuota l'input text
-            this.messaggio="";
-            //risposta di default a tutti i messaggi
-            // let time = this.tempo();
-            setTimeout(function(){
-                app.contact.messages.push(
+            if(this.messaggio !=""){
+                this.contact.messages.push(
                     {
-                        date: app.tempo(), //prendo la data e l'ora corrente
-                        text: "ok",
-                        status: 'received'
+                        date: this.tempo(), //prendo la data e l'ora corrente
+                        text: this.messaggio,
+                        status: 'sent'
                     }
                 );
-            },1000);
+                //svuota l'input text
+                this.messaggio="";
+                //risposta di default a tutti i messaggi
+                setTimeout(function(){
+                    app.contact.messages.push(
+                        {
+                            date: app.tempo(), //prendo la data e l'ora corrente
+                            text: "ok",
+                            status: 'received'
+                        }
+
+                    );
+                    console.log("timeout");
+                },1000);
+            }
+            this.updateScroll();
         },
+        updateScroll(){
+            console.log("ciao");
+            let scrolled = false;
+            if(!scrolled){
+                var element = document.getElementById("messaggi");
+                console.log(element);
+                element.scrollTop = element.scrollHeight;
+                console.log("scroll top : ",element.scrollTop);
+                console.log("scroll height : ",element.scrollHeight);
+
+            }
+        }
     },
 })
 

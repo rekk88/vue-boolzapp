@@ -209,9 +209,9 @@ aside .bottom .contatti .utente > span{
     background-image: url('../img/mine.jpg');
     overflow-y: scroll;
     padding: 5px 10px;
-    display: flex;  
+    /* display: flex;  
     flex-flow: column;
-    justify-content: end;
+    justify-content: end; */
 }
 .date_format{
     font-size: 0.7rem;
