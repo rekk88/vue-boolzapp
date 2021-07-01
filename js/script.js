@@ -88,6 +88,7 @@ var app = new Vue({
         messaggio:"", //v-model per l'inserimento di nuovi messaggi
         ricerca:"", //v-model per la barra di ricerca        
         n:"", //creo un nuovo oggetto della libreria dayjs
+        aggiornato: false,
     },
     computed:{
         filteredContacts(){
@@ -99,7 +100,26 @@ var app = new Vue({
             });
         }
     },
-
+    updated() {
+        if(app.aggiornato == true){
+            console.log("updated");
+            //questa roba qui funziona
+            // this.$nextTick(function () {
+            //     console.log("ciao");
+            //     let scrolled = false;
+            //     if(!scrolled){
+            //         var element = document.getElementById("messaggi");
+            //         console.log(element);
+            //         element.scrollTop = element.scrollHeight;
+            //         console.log("scroll top : ",element.scrollTop);
+            //         console.log("scroll height : ",element.scrollHeight);
+            //     }
+            // });
+            //ma questa è moolto più carina
+            this.updateScroll();
+            app.aggiornato = false
+        }
+    },
     methods: {
       
         visualizza_msg(index){
@@ -158,8 +178,12 @@ var app = new Vue({
                         }
 
                     );
-                    app.updateScroll();
-                    console.log("timeout");
+                    app.aggiornato=true;
+                    // setTimeout(function(){
+                    //     app.updateScroll();
+                    //     console.log("timeout");
+                    // },1);
+                    
                 },1000);
             }
         },
