@@ -101,8 +101,10 @@ var app = new Vue({
         }
     },
     updated() {
-        if(app.aggiornato == true){
+        if(app.aggiornato == true){ //con questo lo scroll parte solo quando viene ricevuto il messaggio
             console.log("updated");
+            //versione con function anonima
+            {
             //questa roba qui funziona
             // this.$nextTick(function () {
             //     console.log("ciao");
@@ -116,6 +118,7 @@ var app = new Vue({
             //     }
             // });
             //ma questa è moolto più carina
+            }
             this.updateScroll();
             app.aggiornato = false
         }
@@ -124,11 +127,12 @@ var app = new Vue({
       
         visualizza_msg(index){
             //lavorando sull'array contacts
+            {
             // this.messaggi = contacts[index].messages,
             // this.nome = contacts[index].name;
             // let lastItem = contacts[index].messages.length - 1;
             // this.ultimoAccesso = contacts[index].messages[lastItem].date;
-            
+            }
             //lavorando sul singolo contatto ad ogni click
             this.contact = this.contacts[index];
             this.indice = index;
@@ -168,6 +172,7 @@ var app = new Vue({
                 );
                 //svuota l'input text
                 this.messaggio="";
+                app.aggiornato=true; //attivo lo scroll anche sul messaggio inviato
                 //risposta di default a tutti i messaggi
                 setTimeout(function(){
                     app.contact.messages.push(
@@ -191,7 +196,7 @@ var app = new Vue({
             console.log("ciao");
             let scrolled = false;
             if(!scrolled){
-                var element = document.getElementById("messaggi");
+                let element = document.getElementById("messaggi");
                 console.log(element);
                 element.scrollTop = element.scrollHeight;
                 console.log("scroll top : ",element.scrollTop);
@@ -201,9 +206,8 @@ var app = new Vue({
         }
     },
 })
-
-
 // visualizza msg con backtick
+{
 // visualizza_msg(item){
         //     console.log(item.messages);
         //     let tag = document.getElementById("messaggi");
@@ -231,3 +235,4 @@ var app = new Vue({
                
         //         `;
 // }
+}
