@@ -89,6 +89,8 @@ var app = new Vue({
         ricerca:"", //v-model per la barra di ricerca        
         n:"", //creo un nuovo oggetto della libreria dayjs
         aggiornato: false,
+        display : "",
+        clicked : false,
     },
     computed:{
         filteredContacts(){
@@ -203,6 +205,18 @@ var app = new Vue({
                 console.log("scroll height : ",element.scrollHeight);
 
             }
+        },
+        showMenu(){
+            console.log("sei un grande");
+            
+            this.clicked = !this.clicked;
+            if (this.clicked) {
+                this.display= "d_block";
+            }
+            else{
+                this.display= "";
+            }
+            console.log(this.clicked);
         }
     },
 })

@@ -113,11 +113,11 @@
                 <div id="messaggio" v-for="messaggio in contact.messages" >
                     <div :class="'message msg_' + messaggio.status + ' clearfix p_x_5 m_b_5'">
                         {{messaggio.text}} 
-                        <div style="position: relative;">
+                        <div class="arrow" @click="showMenu">
                             <i class="fas fa-chevron-down dropdown">
 
                             </i>
-                            <div class="dropdown_content">sono un futuro menu</div>
+                            <div :class="'dropdown_content ' + display">sono un futuro menu</div>
 
                         </div>
                         

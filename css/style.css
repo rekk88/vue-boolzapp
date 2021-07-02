@@ -50,7 +50,9 @@
     content: "";
     /* height:; */
 }
-
+.d_block{
+    display: block !important;
+}
 .grey{
     background-color: #d8d8d8 !important;
 }
@@ -254,9 +256,15 @@ aside .bottom .contatti .utente > span{
     right: 0px;
     top: 5px;
 }
-.msg #messaggi #messaggio .fas.fa-chevron-down:hover .dropdown_content {
-    display: block;
+
+
+.arrow{
+    position: relative;
 }
+
+/* .msg #messaggi #messaggio .arrow:hover .dropdown_content {
+    display: block;
+} */
 .dropdown:hover .dropdown_content{
     display: block;
     min-width: 100px;
